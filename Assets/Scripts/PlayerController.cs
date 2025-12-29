@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
     private bool isWallSliding;
 
     private Vector2 moveInput;
-    
+
     private bool isGrounded;
 
     private bool isFacingRight = true;
@@ -132,14 +133,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-       
+
         CheckGround();
         CheckIfOnWall();
-        MovePlayer();                                   
+        MovePlayer();
         DetermineWallSlide();
         DetermineWhichJump();
 
-        
+
 
 
     }
@@ -151,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    
+
     private void MovePlayer()
     {
 
@@ -161,9 +162,9 @@ public class PlayerController : MonoBehaviour
 
         // or use another currentChangeOfSpeed temporary variable and make it equal to air or ground acceleration and deceleration depending on if is grounded
         float changeOfSpeed;
-                 
+
         if (isGrounded)
-        {            
+        {
             changeOfSpeed = (Mathf.Abs(targetSpeed) > 0.01) ? groundAcceleration : groundDeceleration;
         }
         else
@@ -172,7 +173,7 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.linearVelocityX = Mathf.MoveTowards(rb.linearVelocityX, targetSpeed, changeOfSpeed * Time.fixedDeltaTime);
-        
+
 
         if (moveInput.x != 0)
         {
@@ -180,13 +181,13 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    
+
 
     public void JumpInput(InputAction.CallbackContext context)
     {
         if (context.performed)
-        {           
-                jumpBufferTimeCounter = jumpBufferTime;                               
+        {
+            jumpBufferTimeCounter = jumpBufferTime;
         }
 
         if (context.canceled && rb.linearVelocityY > 0)
@@ -270,7 +271,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    
+
     private void DetermineWallSlide()
     {
         if (!isGrounded && isOnWall && rb.linearVelocityY < 0 && moveInput.x != 0)
@@ -294,7 +295,7 @@ public class PlayerController : MonoBehaviour
             // 9999 is just a very high number to not limit wall jumps, you could use float.MaxValue too
         }
 
-        
+
 
     }
 
@@ -335,7 +336,7 @@ public class PlayerController : MonoBehaviour
             {
                 ExitBerserkMode();
             }
-            
+
         }
 
     }
