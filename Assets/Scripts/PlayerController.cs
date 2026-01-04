@@ -7,10 +7,9 @@ using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameManager gameManager;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
+    private Animator animator;
 
     [SerializeField]
     private TextMeshProUGUI berserkTimeText;
@@ -82,11 +81,17 @@ public class PlayerController : MonoBehaviour
 
     private float jumpHeightCutMultiplier = 0.5f;
 
+    [SerializeField]
+    private GameObject arrowPrefab;
+    [SerializeField]
+    private Transform bowSpawnPoint;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -109,11 +114,12 @@ public class PlayerController : MonoBehaviour
 
         if (isBerserk)
         {
-            berserkTimer -= Time.deltaTime;
-            berserkTimeText.text = Mathf.CeilToInt(berserkTimer).ToString();
+            GameManager.Instance.currentHealth -= Time.deltaTime;
+            berserkTimeText.text = Mathf.CeilToInt(GameManager.Instance.currentHealth).ToString();
             if (berserkTimer <= 0)
             {
                 ExitBerserkMode();
+                // Also Death
 
             }
 
@@ -123,7 +129,7 @@ public class PlayerController : MonoBehaviour
             airDeceleration = airDeceleration * berserkSpeedBoost;
         }
 
-        if (!gameManager.IsInPast)
+        if (!GameManager.Instance.IsInPast)
         {
             ExitBerserkMode();
 
@@ -140,7 +146,7 @@ public class PlayerController : MonoBehaviour
         DetermineWallSlide();
         DetermineWhichJump();
 
-
+        UpdateAnimations();
 
 
     }
@@ -203,8 +209,10 @@ public class PlayerController : MonoBehaviour
         float currentJumpVelocity = isBerserk ? jumpForce * berserkJumpBoost : jumpForce;
 
         rb.linearVelocityY = currentJumpVelocity;
+        animator.SetTrigger("Jump");
         coyoteTimeCounter = 0f;
         jumpBufferTimeCounter = 0f;
+
     }
 
     private void PerformWallJump()
@@ -218,6 +226,7 @@ public class PlayerController : MonoBehaviour
         coyoteTimeCounter = 0f;
 
         CheckFacingDirection(jumpDirection > 0);
+        animator.SetTrigger("Jump");
     }
 
     private void DetermineWhichJump()
@@ -323,11 +332,37 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void UpdateAnimations()
+    {
+
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocityX));
+
+        animator.SetFloat("YVelocity", rb.linearVelocityY);
+
+        animator.SetBool("IsGrounded", isGrounded);
+
+        animator.SetBool("IsWallSliding", isWallSliding);
+
+    }
+
+    public void TimeTravelInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            GameManager.Instance.MakeTimeTravel();
+
+        }
+
+
+    }
+
+
+
     public void BerserkModeInput(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            if (!isBerserk && gameManager.IsInPast == true)
+            if (!isBerserk && GameManager.Instance.IsInPast == true)
             {
                 EnterBerserkMode();
             }
@@ -356,6 +391,52 @@ public class PlayerController : MonoBehaviour
         isBerserk = false;
         spriteRenderer.color = normalColor;
         berserkTimeText.gameObject.SetActive(false);
+
+    }
+
+
+    public void AttackInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            PerformAttack();
+
+        }
+
+
+    }
+
+    private void PerformAttack()
+    {
+        animator.SetTrigger("Attack");
+
+
+    }
+
+    public void BowAttackInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            StartBowAttack();
+
+        }
+
+
+    }
+
+    private void StartBowAttack()
+    {
+        animator.SetTrigger("BowAttack");
+        rb.linearVelocity = Vector2.zero;
+
+    }
+
+    public void ShootArrow()
+    {
+        GameObject arrow = Instantiate(arrowPrefab, bowSpawnPoint.position, Quaternion.identity);
+        float direction = transform.localScale.x > 0 ? 1 : -1;
+
+        arrow.GetComponent<Arrow>().SetUpArrow(direction);
 
     }
 

@@ -1,47 +1,57 @@
 using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using static UnityEngine.InputSystem.InputAction;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject currentWorld;
-    [SerializeField]
-    private GameObject pastWorld;
+    public static GameManager Instance;
+
+    public float currentHealth;
+    public float maxHealth = 20f; // this is also max berserk time
 
     public bool IsInPast { get; private set; }
+    
 
-
-    private void Start()
+    private void Awake()
     {
-
-    }
-
-    public void TimeTravelInput(CallbackContext context)
-    {
-        if (context.performed)
+        if (Instance == null)
         {
-            MakeTimeTravel();
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            currentHealth = maxHealth;
+
+        }
+        else
+        {
+            Destroy(gameObject);
         }
 
     }
 
-    private void MakeTimeTravel()
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        IsInPast = false;
+
+    }
+
+    public void MakeTimeTravel()
     {
         IsInPast = !IsInPast;
-
-        if (IsInPast)
-        {
-            currentWorld.SetActive(false);
-            pastWorld.SetActive(true);
-        }
-
-        if (!IsInPast)
-        {
-            currentWorld.SetActive(true);
-            pastWorld.SetActive(false);           
-        }
 
     }
 
