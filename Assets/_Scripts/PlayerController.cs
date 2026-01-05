@@ -62,6 +62,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float airDeceleration = 5f;
 
+    private float baseGroundAcceleration;
+    private float baseGroundDeceleration;
+    private float baseAirAcceleration;
+    private float baseAirDeceleration;
+    private float baseMaxSpeed;
+    private float baseJumpForce;
+
     [SerializeField]
     private float groundRayLength = 0.05f;
 
@@ -105,6 +112,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Transform bowSpawnPoint;
 
+    [SerializeField]
+    private EnvironmentManager environmentManager;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -112,6 +122,18 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
+        baseGroundAcceleration = groundAcceleration;
+        baseGroundDeceleration = groundDeceleration;
+        baseAirAcceleration = airAcceleration;
+        baseAirDeceleration = airDeceleration;
+        baseMaxSpeed = maxSpeed;
+        baseJumpForce = jumpForce;
+
+        if (environmentManager == null)
+        {
+            environmentManager = FindFirstObjectByType<EnvironmentManager>();
+        }
     }
 
 
@@ -140,6 +162,7 @@ public class PlayerController : MonoBehaviour
         if (isBerserk)
         {
             GameManager.Instance.currentHealth -= Time.deltaTime;
+            berserkTimer -= Time.deltaTime;
             berserkTimeText.text = Mathf.CeilToInt(GameManager.Instance.currentHealth).ToString();
             if (berserkTimer <= 0)
             {
@@ -148,10 +171,22 @@ public class PlayerController : MonoBehaviour
 
             }
 
-            groundAcceleration = groundAcceleration * berserkSpeedBoost;
-            groundDeceleration = groundDeceleration * berserkSpeedBoost;
-            airAcceleration = airAcceleration * berserkSpeedBoost;
-            airDeceleration = airDeceleration * berserkSpeedBoost;
+            groundAcceleration = baseGroundAcceleration * berserkSpeedBoost;
+            groundDeceleration = baseGroundDeceleration * berserkSpeedBoost;
+            airAcceleration = baseAirAcceleration * berserkSpeedBoost;
+            airDeceleration = baseAirDeceleration * berserkSpeedBoost;
+            maxSpeed = baseMaxSpeed * berserkSpeedBoost;
+            jumpForce = baseJumpForce * berserkJumpBoost;
+        }
+
+        if (!isBerserk)
+        {
+            groundAcceleration = baseGroundAcceleration;
+            groundDeceleration = baseGroundDeceleration;
+            airAcceleration = baseAirAcceleration;
+            airDeceleration = baseAirDeceleration;
+            maxSpeed = baseMaxSpeed;
+            jumpForce = baseJumpForce;
         }
 
         if (!GameManager.Instance.IsInPast)
@@ -492,10 +527,32 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Spear"))
+        if (collision.CompareTag("Spear") && IsColliderInActiveWorld(collision))
         {
             ResetLevel();
         }
+    }
+
+    private bool IsColliderInActiveWorld(Collider2D collision)
+    {
+        if (environmentManager == null)
+        {
+            environmentManager = FindFirstObjectByType<EnvironmentManager>();
+            if (environmentManager == null)
+            {
+                return true;
+            }
+        }
+
+        bool belongsToPast = environmentManager.pastWorld != null && collision.transform.IsChildOf(environmentManager.pastWorld.transform);
+        bool belongsToCurrent = environmentManager.currentWorld != null && collision.transform.IsChildOf(environmentManager.currentWorld.transform);
+
+        if (GameManager.Instance.IsInPast)
+        {
+            return belongsToPast;
+        }
+
+        return belongsToCurrent;
     }
 
     private void ResetLevel()
