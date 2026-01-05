@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 0d224f81070b90e44a622ca06ba17438
+guid: 62fdfbf40ebd167408205a066f85c116
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3801398420785350726
-    second: Level Arka Plan Layer 1_0
-  - first:
-      213: 574560325926334817
-    second: Level Arka Plan Layer 1_1
-  - first:
-      213: -2325111469000211712
-    second: Level Arka Plan Layer 1_2
-  - first:
-      213: -165389930147412951
-    second: Level Arka Plan Layer 1_3
+      213: -4945756611149258086
+    second: L1K3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -122,35 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Level Arka Plan Layer 1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 803
-        width: 5344
-        height: 2203
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64844a819b741c430800000000000000
-      internalID: 3801398420785350726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Level Arka Plan Layer 1_1
+      name: L1K3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 627
-        height: 823
+        width: 10240
+        height: 5760
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1613fd0829f39f700800000000000000
-      internalID: 574560325926334817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Level Arka Plan Layer 1_2
-      rect:
-        serializedVersion: 2
-        x: 4733
-        y: 0
-        width: 611
-        height: 823
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0034e0b107b8bbfd0800000000000000
-      internalID: -2325111469000211712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Level Arka Plan Layer 1_3
-      rect:
-        serializedVersion: 2
-        x: 1076
-        y: 0
-        width: 3258
-        height: 456
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 924032c1cba64bdf0800000000000000
-      internalID: -165389930147412951
+      spriteID: a92a8eed0942d5bb0800000000000000
+      internalID: -4945756611149258086
       vertices: []
       indices: 
       edges: []
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Level Arka Plan Layer 1_0: 3801398420785350726
-      Level Arka Plan Layer 1_1: 574560325926334817
-      Level Arka Plan Layer 1_2: -2325111469000211712
-      Level Arka Plan Layer 1_3: -165389930147412951
+      L1K3_0: -4945756611149258086
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
