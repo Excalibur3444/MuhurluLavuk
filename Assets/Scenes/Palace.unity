@@ -203,7 +203,7 @@ SpriteRenderer:
   m_Size: {x: 247.4094, y: 72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &136424911
@@ -2165,7 +2165,7 @@ SpriteRenderer:
   m_Size: {x: 128, y: 72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &915442009
@@ -2366,7 +2366,7 @@ SpriteRenderer:
   m_Size: {x: 53.439995, y: 22.029999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1004035681
@@ -2648,7 +2648,7 @@ SpriteRenderer:
   m_Size: {x: 128, y: 26.609999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1188541489
@@ -2817,7 +2817,7 @@ SpriteRenderer:
   m_Size: {x: 102.4, y: 57.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1347075792
@@ -2964,7 +2964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3179ab1a8fb23ab4d80f81a81cdec057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level2
+  sceneToLoad: Level2_1
   faderCanvas: {fileID: 285684207}
   fadeDuration: 1
 --- !u!61 &1439280850
@@ -3114,7 +3114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3179ab1a8fb23ab4d80f81a81cdec057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level1
+  sceneToLoad: Level1_T
   faderCanvas: {fileID: 285684207}
   fadeDuration: 1
 --- !u!61 &1525063644
@@ -3590,7 +3590,7 @@ SpriteRenderer:
   m_Size: {x: 102.4, y: 57.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1841481819
@@ -4019,7 +4019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3179ab1a8fb23ab4d80f81a81cdec057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Level3
+  sceneToLoad: Level3_2
   faderCanvas: {fileID: 285684207}
   fadeDuration: 1
 --- !u!61 &1981736461

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0f7a116e783a1f74f958a85c805bae68
+guid: 3c4b654ddb128734db3dde18e369a0e5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7070110564016678328
-    second: aa_0
+      213: -6744605284433259921
+    second: Boss Fight Layer 3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,27 +96,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: aa_0
+      name: Boss Fight Layer 3_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 1096
-        height: 74
+        x: 0
+        y: 0
+        width: 12800
+        height: 7200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 1, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b563f259141e1260800000000000000
-      internalID: 7070110564016678328
+      spriteID: f62122f6a395662a0800000000000000
+      internalID: -6744605284433259921
       vertices: []
       indices: 
       edges: []
@@ -125,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 514cbc103b6f77541a6f032b8fd78ec5
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      aa_0: 7070110564016678328
+      Boss Fight Layer 3_0: -6744605284433259921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

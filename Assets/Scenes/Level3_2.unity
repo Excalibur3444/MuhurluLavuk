@@ -203,7 +203,7 @@ SpriteRenderer:
   m_Size: {x: 247.4094, y: 72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &136424911
@@ -1985,7 +1985,7 @@ SpriteRenderer:
   m_Size: {x: 128, y: 72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &915442009
@@ -2143,7 +2143,7 @@ SpriteRenderer:
   m_Size: {x: 53.439995, y: 22.029999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1004035681
@@ -2379,7 +2379,7 @@ SpriteRenderer:
   m_Size: {x: 128, y: 26.609999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1161025745
@@ -2601,7 +2601,7 @@ SpriteRenderer:
   m_Size: {x: 102.4, y: 57.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1347075792
@@ -3374,7 +3374,7 @@ SpriteRenderer:
   m_Size: {x: 102.4, y: 57.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1841481819
@@ -4061,6 +4061,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2590332445404674395, guid: 02a86e594ff512c4fa7f3c317c202307, type: 3}
   m_PrefabInstance: {fileID: 5479491281012816071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2047297615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047297617}
+  - component: {fileID: 2047297616}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2047297616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047297615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a5d64b3c6c2f0499d71ca20d3e7028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentHealth: 0
+  maxHealth: 20
+--- !u!4 &2047297617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047297615}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.35052, y: 2.69066, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5479491281012816071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4224,6 +4270,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1893113679}
+  - {fileID: 2047297617}
   - {fileID: 619394802}
   - {fileID: 6859767861577163733}
   - {fileID: 774326945}

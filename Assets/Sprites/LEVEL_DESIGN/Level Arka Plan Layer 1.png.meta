@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 745d8221d3a40584ab2f022db3965d10
+guid: 0d224f81070b90e44a622ca06ba17438
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7625406061393645561
-    second: adventurer-idle-00_0
+      213: 3801398420785350726
+    second: Level Arka Plan Layer 1_0
+  - first:
+      213: 574560325926334817
+    second: Level Arka Plan Layer 1_1
+  - first:
+      213: -2325111469000211712
+    second: Level Arka Plan Layer 1_2
+  - first:
+      213: -165389930147412951
+    second: Level Arka Plan Layer 1_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,17 +105,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adventurer-idle-00_0
+      name: Level Arka Plan Layer 1_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 0
-        width: 21
-        height: 31
+        x: 0
+        y: 803
+        width: 5344
+        height: 2203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 700758a969d1d2690800000000000000
-      internalID: -7625406061393645561
+      spriteID: 64844a819b741c430800000000000000
+      internalID: 3801398420785350726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Arka Plan Layer 1_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 627
+        height: 823
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1613fd0829f39f700800000000000000
+      internalID: 574560325926334817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Arka Plan Layer 1_2
+      rect:
+        serializedVersion: 2
+        x: 4733
+        y: 0
+        width: 611
+        height: 823
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0034e0b107b8bbfd0800000000000000
+      internalID: -2325111469000211712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level Arka Plan Layer 1_3
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 0
+        width: 3258
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924032c1cba64bdf0800000000000000
+      internalID: -165389930147412951
       vertices: []
       indices: 
       edges: []
@@ -125,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      adventurer-idle-00_0: -7625406061393645561
+      Level Arka Plan Layer 1_0: 3801398420785350726
+      Level Arka Plan Layer 1_1: 574560325926334817
+      Level Arka Plan Layer 1_2: -2325111469000211712
+      Level Arka Plan Layer 1_3: -165389930147412951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

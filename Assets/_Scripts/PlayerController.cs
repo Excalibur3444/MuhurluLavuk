@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -10,9 +11,27 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
     private Animator animator;
+    private AudioSource audioSource;
 
     [SerializeField]
     private TextMeshProUGUI berserkTimeText;
+
+    // Ses efektleri
+    [SerializeField]
+    private AudioClip footstepSound;
+    [SerializeField]
+    private AudioClip jumpSound;
+    [SerializeField]
+    private AudioClip damageSound;
+    [SerializeField]
+    private float footstepVolume = 0.3f;
+    [SerializeField]
+    private float jumpVolume = 0.5f;
+    [SerializeField]
+    private float damageVolume = 0.7f;
+    private float footstepTimer = 0f;
+    [SerializeField]
+    private float footstepCooldown = 0.3f;
 
     // about berserk mode
     [SerializeField]
@@ -92,6 +111,7 @@ public class PlayerController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -110,6 +130,11 @@ public class PlayerController : MonoBehaviour
         if (jumpBufferTimeCounter > 0)
         {
             jumpBufferTimeCounter -= Time.deltaTime;
+        }
+
+        if (footstepTimer > 0)
+        {
+            footstepTimer -= Time.deltaTime;
         }
 
         if (isBerserk)
@@ -145,6 +170,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         DetermineWallSlide();
         DetermineWhichJump();
+        PlayFootstepSound();
 
         UpdateAnimations();
 
@@ -210,6 +236,7 @@ public class PlayerController : MonoBehaviour
 
         rb.linearVelocityY = currentJumpVelocity;
         animator.SetTrigger("Jump");
+        PlaySound(jumpSound, jumpVolume);
         coyoteTimeCounter = 0f;
         jumpBufferTimeCounter = 0f;
 
@@ -227,6 +254,7 @@ public class PlayerController : MonoBehaviour
 
         CheckFacingDirection(jumpDirection > 0);
         animator.SetTrigger("Jump");
+        PlaySound(jumpSound, jumpVolume);
     }
 
     private void DetermineWhichJump()
@@ -438,6 +466,41 @@ public class PlayerController : MonoBehaviour
 
         arrow.GetComponent<Arrow>().SetUpArrow(direction);
 
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (isGrounded && Mathf.Abs(moveInput.x) > 0.01f && footstepTimer <= 0)
+        {
+            PlaySound(footstepSound, footstepVolume);
+            footstepTimer = footstepCooldown;
+        }
+    }
+
+    private void PlaySound(AudioClip clip, float volume)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip, volume);
+        }
+    }
+
+    public void TakeDamage()
+    {
+        PlaySound(damageSound, damageVolume);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Spear"))
+        {
+            ResetLevel();
+        }
+    }
+
+    private void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 

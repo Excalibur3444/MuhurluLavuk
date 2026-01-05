@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 73de05c1cdd02b54c98c680e26fab59c
+guid: 2bb8aca95cc29cf4a9731ccb3add4f75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1959985238400652957
-    second: adventurer-idle-01_0
+      213: -5674064365039691518
+    second: zincir_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -52,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 133, y: 0, z: 132, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -96,27 +96,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: adventurer-idle-01_0
+      name: zincir_0
       rect:
         serializedVersion: 2
-        x: 15
+        x: 130
         y: 0
-        width: 19
-        height: 32
+        width: 43
+        height: 1643
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9651eb9034433b10800000000000000
-      internalID: 1959985238400652957
+      spriteID: 2095b11c58ca141b0800000000000000
+      internalID: -5674064365039691518
       vertices: []
       indices: 
       edges: []
@@ -125,8 +138,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      adventurer-idle-01_0: 1959985238400652957
+      zincir_0: -5674064365039691518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
